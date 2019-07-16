@@ -1,0 +1,9 @@
+D:\Projects\MyAngularBoardBackend\DataModel\bin\Debug\netcoreapp2.2\DataModel.deps.json
+D:\Projects\MyAngularBoardBackend\DataModel\bin\Debug\netcoreapp2.2\DataModel.dll
+D:\Projects\MyAngularBoardBackend\DataModel\bin\Debug\netcoreapp2.2\DataModel.pdb
+D:\Projects\MyAngularBoardBackend\DataModel\obj\Debug\netcoreapp2.2\DataModel.csprojAssemblyReference.cache
+D:\Projects\MyAngularBoardBackend\DataModel\obj\Debug\netcoreapp2.2\DataModel.csproj.CoreCompileInputs.cache
+D:\Projects\MyAngularBoardBackend\DataModel\obj\Debug\netcoreapp2.2\DataModel.AssemblyInfoInputs.cache
+D:\Projects\MyAngularBoardBackend\DataModel\obj\Debug\netcoreapp2.2\DataModel.AssemblyInfo.cs
+D:\Projects\MyAngularBoardBackend\DataModel\obj\Debug\netcoreapp2.2\DataModel.dll
+D:\Projects\MyAngularBoardBackend\DataModel\obj\Debug\netcoreapp2.2\DataModel.pdb
