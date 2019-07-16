@@ -2,6 +2,7 @@ language: csharp
 
 dotnet: 2.2
 sudo: false
+dist: xenial
 
 env: 
     global:
