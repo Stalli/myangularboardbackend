@@ -202,6 +202,7 @@ namespace DAL
       Title = car.Title,
       Description = car.Description,
       ColumnId = car.ColumnId,
+      ColumnTitle = _columns.FirstOrDefault(col => col.Id == car.ColumnId)?.Title,
       Comments = _comments.Where(com => com.CardId == car.Id)
     });
 
