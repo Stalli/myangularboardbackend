@@ -56,6 +56,7 @@ namespace MyAngularBoardBackend.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            Data.Instance.DeleteCard(id);
         }
     }
 }

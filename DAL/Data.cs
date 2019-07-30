@@ -358,5 +358,10 @@ namespace DAL
       comment.Text = input.Text;
       comment.CardId = input.CardId;
     }
+
+    public void DeleteCard(int id)
+    {
+        _cards.Remove(_cards.First(c => c.Id == id));
+    }
   }
 }
