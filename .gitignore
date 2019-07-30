@@ -4,3 +4,4 @@ obj
 .user
 */*.user
 packages
+bin/
