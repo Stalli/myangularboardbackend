@@ -6,8 +6,6 @@ namespace DataModel
 {
     public interface IOrderedEntity
     {
-        //void GetOrder();
-
         int OrderNo { get; set; }
     }
 }
