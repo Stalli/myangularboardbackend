@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DataModel
 {
-  public class Column
+  public class Column : IOrderedEntity
   {
     public int Id { get; set; }
     public string Title { get; set; }
