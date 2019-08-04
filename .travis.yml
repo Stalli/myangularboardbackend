@@ -1,0 +1,12 @@
+language: csharp
+
+dotnet: 2.2
+sudo: false
+dist: xenial
+
+env: 
+    global:
+        - DOTNET_CLI_TELEMETRY_OPTOUT: 1
+
+script: 
+    - dotnet build MyAngularBoardBackend.sln -c Release
