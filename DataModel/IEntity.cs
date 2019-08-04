@@ -4,8 +4,8 @@ using System.Text;
 
 namespace DataModel
 {
-    public interface IOrderedEntity : IEntity
+    public interface IEntity
     {
-        int OrderNo { get; set; } // 1-based
+        int Id { get; set; }
     }
 }

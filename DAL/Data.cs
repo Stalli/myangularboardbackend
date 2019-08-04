@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
@@ -56,91 +57,106 @@ namespace DAL
             Id = 1,
             Title = "TestCard1",
             Description = "TestLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongDescription",
-            ColumnId = 1
+            ColumnId = 1,
+            OrderNo = 1
             },
           new Card{
             Id = 2,
             Title = "TestCard2",
             Description = "2TestLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongDescription",
-            ColumnId = 1
+            ColumnId = 1,
+            OrderNo = 2
           },
           new Card{
             Id = 3,
             Title = "TestCard3",
             Description = "3TestLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongDescription",
-            ColumnId = 1
+            ColumnId = 1,
+            OrderNo = 3
           },
           new Card{
             Id = 4,
             Title = "TestCard4",
             Description = "4TestLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongDescription",
-            ColumnId = 2
+            ColumnId = 2,
+            OrderNo = 1
           },
           new Card{
             Id = 5,
             Title = "TestCard5",
             Description = "5TestLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongDescription",
-            ColumnId = 2
+            ColumnId = 2,
+            OrderNo = 2
           },
           new Card{
             Id = 6,
             Title = "TestCard6",
             Description = "6TestLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongDescription",
-            ColumnId = 2
+            ColumnId = 2,
+            OrderNo = 3
           },
           new Card{
             Id = 7,
             Title = "TestCard7",
             Description = "4TestLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongDescription",
-            ColumnId = 3
+            ColumnId = 3,
+            OrderNo = 1
           },
           new Card{
             Id = 8,
             Title = "TestCard8",
             Description = "5TestLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongDescription",
-            ColumnId = 3
+            ColumnId = 3,
+            OrderNo = 2
           },
           new Card{
             Id = 9,
             Title = "TestCard9",
             Description = "6TestLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongDescription",
-            ColumnId = 3
+            ColumnId = 3,
+            OrderNo = 3
           },
           new Card{
             Id = 10,
             Title = "TestCard4",
             Description = "4TestLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongDescription",
-            ColumnId = 4
+            ColumnId = 4,
+            OrderNo = 1
           },
           new Card{
             Id = 11,
             Title = "TestCard5",
             Description = "5TestLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongDescription",
-            ColumnId = 4
+            ColumnId = 4,
+            OrderNo = 2
           },
           new Card{
             Id = 12,
             Title = "TestCard6",
             Description = "6TestLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongDescription",
-            ColumnId = 4
+            ColumnId = 4,
+            OrderNo = 3
           },
           new Card{
             Id = 13,
             Title = "TestCard4",
             Description = "4TestLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongDescription",
-            ColumnId = 5
+            ColumnId = 5,
+            OrderNo = 1
           },
           new Card{
             Id = 14,
             Title = "TestCard5",
             Description = "5TestLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongDescription",
-            ColumnId = 5
+            ColumnId = 5,
+            OrderNo = 2
           },
           new Card{
             Id = 15,
             Title = "TestCard6",
             Description = "6TestLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongDescription",
-            ColumnId = 5
+            ColumnId = 5,
+            OrderNo = 3
           },
         };
 
@@ -202,6 +218,7 @@ namespace DAL
       Title = car.Title,
       Description = car.Description,
       ColumnId = car.ColumnId,
+      OrderNo = car.OrderNo,
       ColumnTitle = _columns.FirstOrDefault(col => col.Id == car.ColumnId)?.Title,
       Comments = _comments.Where(com => com.CardId == car.Id)
     });
@@ -213,70 +230,107 @@ namespace DAL
       return Columns.Take(count);
     }
 
-    public bool MoveCard(MoveCardDto moveCardDto)
+    /// <summary>
+    /// Changes the order of one entity inside a parent one, e.g. a card inside a column or column inside a board.
+    /// Don't use this function for moving a card from one column to another.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="entity"></param>
+    /// <param name="dto"></param>
+    /// <returns></returns>
+    private bool ChangeOrder<T>(T entity, IChangeOrder dto) where T : IOrderedEntity
     {
-      //var card = Columns.SelectMany(column => column.Cards).FirstOrDefault(c => c.Id == moveCardDto.CardId);
+        try
+        {
+            if (entity == null)
+            {
+                Log();
+                return false;
+            }
 
-      //var currentColumn = card?.Column;
-      //currentColumn?.Cards.ToList().Remove(card);
+            if (dto.NewOrderNo == dto.PreviousOrderNo)
+                return true;
 
-      //Columns.FirstOrDefault(col => col.Id == moveCardDto.TargetColumnId)?.Cards.ToList().Add(card);
+            entity.OrderNo = dto.NewOrderNo;
 
-      //return Columns;
+            var repository = GetRepository<T>();
 
-      var card = _cards.FirstOrDefault(car => car.Id == moveCardDto.CardId);
-      if (card == null)
-      {
-        Log();
-        return false;
-      }
+            if (dto.NewOrderNo > dto.PreviousOrderNo)
+            {
+                repository.Where(col =>
+                        col.OrderNo <= dto.NewOrderNo &&
+                        col.OrderNo > dto.PreviousOrderNo &&
+                        col.Id != entity.Id)
+                    .ToList().ForEach(col => { col.OrderNo--; });
+            }
+            else
+            {
+                repository.Where(col =>
+                        col.OrderNo >= dto.NewOrderNo &&
+                        col.OrderNo < dto.PreviousOrderNo &&
+                        col.Id != entity.Id)
+                    .ToList().ForEach(col => { col.OrderNo++; });
+            }
+        }
+        catch (Exception)
+        {
+            Log();
+            return false;
+        }
 
-      card.ColumnId = moveCardDto.TargetColumnId;
-
-      return true;
+        return true;
     }
+
+    private IEnumerable<T> GetRepository<T>() where T : IOrderedEntity
+        {
+        if (typeof(T) == typeof(Column))
+        {
+            return _columns as IEnumerable<T>;
+        }
+
+        if (typeof(T) == typeof(Card))
+        {
+            return _cards as IEnumerable<T>;
+        }
+
+        if (typeof(T) == typeof(Comment))
+        {
+            return _comments as IEnumerable<T>;
+        }
+
+        throw new Exception("Unknown type");
+    }
+
 
     public bool MoveColumn(MoveColumnDto moveColumnDto)
     {
-      try
-      {
-        if (moveColumnDto.NewColumnOrderNo == moveColumnDto.PreviousColumnOrderNo)
-          return true;
+        var column = _columns.FirstOrDefault(col => col.OrderNo == moveColumnDto.PreviousOrderNo);
+        return ChangeOrder(column, moveColumnDto);
+    }
 
-        var column = _columns.FirstOrDefault(col => col.OrderNo == moveColumnDto.PreviousColumnOrderNo);
+    public bool MoveCard(MoveCardDto moveCardDto)
+    {
+        var card = _cards.FirstOrDefault(car => car.Id == moveCardDto.CardId && car.OrderNo == moveCardDto.PreviousOrderNo);
 
-        if (column == null)
-        {
-          Log();
-          return false;
-        }
+        if (card == null)
+            return false;
 
-        column.OrderNo = moveColumnDto.NewColumnOrderNo;
+        if (card.ColumnId == moveCardDto.TargetColumnId)
+            return ChangeOrder(card, moveCardDto);
         
-        if (moveColumnDto.NewColumnOrderNo > moveColumnDto.PreviousColumnOrderNo)
-        {
-          _columns.Where(col =>
-              col.OrderNo <= moveColumnDto.NewColumnOrderNo &&
-              col.OrderNo > moveColumnDto.PreviousColumnOrderNo &&
-              col.Id != column.Id)
-            .ToList().ForEach(col => { col.OrderNo--; });
-        }
-        else
-        {
-          _columns.Where(col =>
-              col.OrderNo >= moveColumnDto.NewColumnOrderNo &&
-              col.OrderNo < moveColumnDto.PreviousColumnOrderNo &&
-              col.Id != column.Id)
-            .ToList().ForEach(col => { col.OrderNo++; });
-        }
-      }
-      catch (Exception)
-      {
-        Log();
-        return false;
-      }
+        _cards.Where(car => car.ColumnId == moveCardDto.TargetColumnId
+                            && car.OrderNo >= moveCardDto.NewOrderNo
+                            && car.Id != card.Id)
+            .ToList().ForEach(car => { car.OrderNo++; });
 
-      return true;
+        _cards.Where(car => car.ColumnId == card.ColumnId
+                            && car.OrderNo >= moveCardDto.PreviousOrderNo)
+            .ToList().ForEach(car => { car.OrderNo--; });
+
+        card.OrderNo = moveCardDto.NewOrderNo;
+        card.ColumnId = moveCardDto.TargetColumnId;
+
+        return true;
     }
 
     private void Log()
@@ -315,12 +369,14 @@ namespace DAL
     public CardDto AddCard(CardDto input)
     {
       input.Id = _cards.Max(car => car.Id) + 1;
+      var orderNumber = _cards.Max(car => car.OrderNo) + 1;
 
       _cards.Add(new Card
       {
         Id = input.Id,
         ColumnId = input.ColumnId,
-        Title = input.Title
+        Title = input.Title,
+        OrderNo = orderNumber
       });
 
       return input;

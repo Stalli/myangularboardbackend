@@ -4,15 +4,14 @@ using System.Text;
 
 namespace DataModel.Dtos
 {
-  public class MoveColumnDto
+  public class MoveColumnDto : IChangeOrder
   {
-    public int PreviousColumnOrderNo { get; set; }//1-based (not 0-based)
-    public int NewColumnOrderNo { get; set; }//1-based
-
+    public int PreviousOrderNo { get; set; }
+    public int NewOrderNo { get; set; }
     public MoveColumnDto(int previous, int newOne)
     {
-      PreviousColumnOrderNo = previous;
-      NewColumnOrderNo = newOne;
+        PreviousOrderNo = previous;
+        NewOrderNo = newOne;
     }
   }
 }
