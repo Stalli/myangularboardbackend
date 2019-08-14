@@ -4,14 +4,17 @@ using System.Linq;
 using System.Text;
 using DAL;
 using DataModel;
+using DataModel.Dtos;
 using NUnit.Framework;
 
 namespace DalTests
 {
-  public class MiscellaneousTests
+  public class ColumnsTests
   {
 
     private Data data;
+    private string userId_1 = "user1";
+    private string userId_2 = "user2";
 
     [SetUp]
     public void Setup()
@@ -24,25 +27,29 @@ namespace DalTests
           {
             Id = 1,
             OrderNo = 1,
-            Title = "BackendColumnTitleForColumnOne"
+            Title = "BackendColumnTitleForColumnOne",
+            UserId = userId_1
           },
           new Column
           {
             Id = 2,
             OrderNo = 2,
-            Title = "BackendColumnTitleForColumnTwo"
+            Title = "BackendColumnTitleForColumnTwo",
+            UserId = userId_1
           },
           new Column
           {
             Id = 3,
             OrderNo = 3,
-            Title = "BackendColumnTitleForColumnThree"
+            Title = "BackendColumnTitleForColumnThree",
+            UserId = userId_2
           },
           new Column
           {
             Id = 4,
             OrderNo = 4,
-            Title = "BackendColumnTitleForColumnFour"
+            Title = "BackendColumnTitleForColumnFour",
+            UserId = userId_2
           },
           new Column
           {
@@ -149,15 +156,79 @@ namespace DalTests
     }
 
     [Test]
-    public void GetColumnsTest()
+    public void GetNonexistentUserColumnsTest()
     {
-      var count = 3;
+        var nonExistentUserId = "foo";
+        var count = data.Columns.Count(col => string.Equals(col.UserId, nonExistentUserId));
+        var columns = data.GetColumns(nonExistentUserId);
 
-      Assert.GreaterOrEqual(data.Columns.Count(), count);
+        Assert.AreEqual(0, count);
+        Assert.AreEqual(0, columns.Count());
+    }
 
-      var columns = data.GetColumns(count);
+    [Test]
+    public void GetUsersAllColumnsTest()
+    {
+        var count = data.Columns.Count(col => string.Equals(col.UserId, userId_1));
+        var columns = data.GetColumns(userId_1);
 
-      Assert.AreEqual(count, columns.Count());
+        Assert.AreEqual(count, columns.Count());
+    }
+
+    [Test]
+    public void GetZeroColumnsTest()
+    {
+        var count = data.Columns.Count(col => string.Equals(col.UserId, userId_1));
+        var columns = data.GetColumns(userId_1, 0);
+
+        Assert.NotZero(count);
+        Assert.Zero(columns.Count());
+    }
+
+    [Test]
+    public void GetNegativeColumnsTest()
+    {
+        var columns = data.GetColumns(userId_1, -2);
+
+        Assert.Zero(columns.Count());
+    }
+
+    [Test]
+    public void GetLessThanExistColumnsTest()
+    {
+        var amountToTake = 1;
+        var count = data.Columns.Count(col => string.Equals(col.UserId, userId_1));
+
+        var columns = data.GetColumns(userId_1, amountToTake);
+
+        Assert.Greater(count, amountToTake);
+        Assert.AreEqual(amountToTake, columns.Count());
+    }
+
+    [Test]
+    public void GetMoreThanExistColumnsTest()
+    {
+        var amountToTake = 3;
+        var count = data.Columns.Count(col => string.Equals(col.UserId, userId_1));
+        var columns = data.GetColumns(userId_1, amountToTake);
+
+        Assert.Less(count, amountToTake);
+        Assert.AreEqual(count, columns.Count());
+    }
+
+    [Test]
+    public void AddColumnTest()
+    {
+        var countBefore = data.Columns.Count(col => string.Equals(col.UserId, userId_1));
+
+        data.AddColumn(new ColumnDto
+        {
+            UserId = userId_1
+        });
+
+        var countAfter = data.Columns.Count(col => string.Equals(col.UserId, userId_1));
+
+        Assert.AreEqual(countBefore+1,countAfter);
     }
 
   }
