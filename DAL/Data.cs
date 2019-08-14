@@ -10,6 +10,8 @@ namespace DAL
 {
   public class Data
   {
+    private const string DEMO_USER_ID = "DEMO_USER_ID";
+
     private static Data _instance;
     private List<Column> _columns { get; set; }
     private List<Card> _cards { get; set; }
@@ -23,19 +25,22 @@ namespace DAL
         {
           Id = 1,
           OrderNo = 1,
-          Title = "ColumnOne"
+          Title = "ColumnOne",
+          UserId = "103168318818722947027"
         },
         new Column
         {
           Id = 2,
           OrderNo = 2,
-          Title = "BackendColumnTitleForColumnTwoqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq"
+          Title = "BackendColumnTitleForColumnTwoqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq",
+          UserId = "2103168318818722947027"
         },
         new Column
         {
           Id = 3,
           OrderNo = 3,
-          Title = "ColumnThree"
+          Title = "ColumnThree",
+          UserId = "103168318818722947027"
         },
         new Column
         {
@@ -195,7 +200,7 @@ namespace DAL
       };
     }
 
-    public static Data Instance => _instance ?? (_instance = new Data());
+        public static Data Instance => _instance ?? (_instance = new Data());
 
     public Data(List<Column> columns, List<Card> cards, List<Comment> comments)
     {
@@ -204,13 +209,12 @@ namespace DAL
       _comments = comments;
     }
 
-    public IEnumerable<ColumnDto> Columns => _columns.Select(col => new ColumnDto
+    public IEnumerable<Column> Columns => _columns;
+
+    public IEnumerable<ColumnDto> GetColumns()
     {
-      Id = col.Id,
-      OrderNo = col.OrderNo,
-      Title = col.Title,
-      Cards = _cards.Where(car => car.ColumnId == col.Id)
-    });
+        return GetColumns(DEMO_USER_ID);
+    }
 
     public IEnumerable<CardDto> Cards => _cards.Select(car => new CardDto
     {
@@ -224,10 +228,14 @@ namespace DAL
     });
 
     public IEnumerable<Comment> Comments => _comments.Select(c => c);
-
-    public IEnumerable<ColumnDto> GetColumns(int count)
+        
+    public IEnumerable<ColumnDto> GetColumns(string userId, int? count = null)
     {
-      return Columns.Take(count);
+        var query = _columns.Where(col => col.UserId == userId);
+
+        query = count.HasValue ? query.Take(count.Value) : query;
+
+        return query.ToDto(_cards);
     }
 
     /// <summary>
@@ -339,22 +347,12 @@ namespace DAL
 
     public ColumnDto AddColumn(ColumnDto input)
     {
-      var id = _columns.Max(col => col.Id) + 1;
-      var orderNumber = _columns.Max(col => col.OrderNo) + 1;
+      input.Id = _columns.Max(col => col.Id) + 1;
+      input.OrderNo = _columns.Max(col => col.OrderNo) + 1;
 
-      _columns.Add(new Column
-      {
-        Id = id,
-        OrderNo = orderNumber,
-        Title = input.Title
-      });
+      _columns.Add(input.ToEntity());
 
-      return new ColumnDto
-      {
-        Id = id,
-        OrderNo = orderNumber,
-        Title = input.Title
-      };
+      return input;
     }
 
     public Comment AddComment(Comment input)
