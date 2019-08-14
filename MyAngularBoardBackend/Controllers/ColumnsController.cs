@@ -14,18 +14,21 @@ namespace MyAngularBoardBackend.Controllers
   [Route("api/[controller]")]
   public class ColumnsController : Controller
   {
-    // GET: api/<controller>
+    /// <summary>
+    /// Returns columns of demo user
+    /// </summary>
+    /// <returns></returns>
     [HttpGet]
     public IEnumerable<ColumnDto> Get()
     {
-      return Data.Instance.GetColumns(3);
+      return Data.Instance.GetColumns();
     }
 
     // GET api/<controller>/5
-    [HttpGet("{id}")]
-    public string Get(int id)
+    [HttpGet("{userId}")]
+    public IEnumerable<ColumnDto> Get(string userId)
     {
-      return "value";
+      return Data.Instance.GetColumns(userId);
     }
 
     // POST api/<controller>
