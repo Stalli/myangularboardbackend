@@ -1,8 +1,6 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Metadata.Ecma335;
 using DataModel;
 using DataModel.Dtos;
 
@@ -10,7 +8,7 @@ namespace DAL
 {
   public class Data
   {
-    private const string DEMO_USER_ID = "DEMO_USER_ID";
+    private const string DemoUserId = "DEMO_USER_ID";
 
     private static Data _instance;
     private List<Column> _columns { get; set; }
@@ -46,13 +44,15 @@ namespace DAL
         {
           Id = 4,
           OrderNo = 4,
-          Title = "BackendColumnTitleForColumnFour"
+          Title = "BackendColumnTitleForColumnFour",
+          UserId = DemoUserId
         },
         new Column
         {
           Id = 5,
           OrderNo = 5,
-          Title = "BackendColumnTitleForColumnFive"
+          Title = "BackendColumnTitleForColumnFive",
+          UserId = DemoUserId
         }
       };
 
@@ -211,11 +211,6 @@ namespace DAL
 
     public IEnumerable<Column> Columns => _columns;
 
-    public IEnumerable<ColumnDto> GetColumns()
-    {
-        return GetColumns(DEMO_USER_ID);
-    }
-
     public IEnumerable<CardDto> Cards => _cards.Select(car => new CardDto
     {
       Id = car.Id,
@@ -228,7 +223,12 @@ namespace DAL
     });
 
     public IEnumerable<Comment> Comments => _comments.Select(c => c);
-        
+
+    public IEnumerable<ColumnDto> GetColumns()
+    {
+        return GetColumns(DemoUserId);
+    }
+
     public IEnumerable<ColumnDto> GetColumns(string userId, int? count = null)
     {
         var query = _columns.Where(col => col.UserId == userId);
