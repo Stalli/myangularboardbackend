@@ -44,15 +44,29 @@ namespace DAL
         {
           Id = 4,
           OrderNo = 4,
-          Title = "BackendColumnTitleForColumnFour",
+          Title = "Private",
           UserId = DemoUserId
         },
         new Column
         {
           Id = 5,
           OrderNo = 5,
-          Title = "BackendColumnTitleForColumnFive",
+          Title = "Professional",
           UserId = DemoUserId
+        },
+        new Column
+        {
+            Id = 6,
+            OrderNo = 6,
+            Title = "Ideas",
+            UserId = DemoUserId
+        },
+        new Column
+        {
+            Id = 7,
+            OrderNo = 7,
+            Title = "Done!",
+            UserId = DemoUserId
         }
       };
 
@@ -123,46 +137,74 @@ namespace DAL
           },
           new Card{
             Id = 10,
-            Title = "TestCard4",
-            Description = "4TestLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongDescription",
+            Title = "Sport",
+            Description = "",
             ColumnId = 4,
             OrderNo = 1
           },
           new Card{
             Id = 11,
-            Title = "TestCard5",
-            Description = "5TestLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongDescription",
+            Title = "Organize a weekend with college friends",
+            Description = "",
             ColumnId = 4,
             OrderNo = 2
           },
           new Card{
             Id = 12,
-            Title = "TestCard6",
-            Description = "6TestLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongDescription",
+            Title = "Go dancing once a month",
+            Description = "",
             ColumnId = 4,
             OrderNo = 3
           },
           new Card{
             Id = 13,
-            Title = "TestCard4",
-            Description = "4TestLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongDescription",
+            Title = "Increase revenue by 10%",
+            Description = "",
             ColumnId = 5,
             OrderNo = 1
           },
           new Card{
             Id = 14,
-            Title = "TestCard5",
-            Description = "5TestLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongDescription",
+            Title = "Speak at a marketing conference",
+            Description = "",
             ColumnId = 5,
             OrderNo = 2
           },
           new Card{
             Id = 15,
-            Title = "TestCard6",
-            Description = "6TestLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongDescription",
+            Title = "Take Java programming courses",
+            Description = "",
             ColumnId = 5,
             OrderNo = 3
           },
+          new Card{
+              Id = 16,
+              Title = "New Year Celebration Ideas",
+              Description = "",
+              ColumnId = 6,
+              OrderNo = 1
+          },
+          new Card{
+              Id = 17,
+              Title = "Halloween costumes",
+              Description = "",
+              ColumnId = 6,
+              OrderNo = 2
+          },
+          new Card{
+              Id = 18,
+              Title = "Corporate Ideas",
+              Description = "",
+              ColumnId = 6,
+              OrderNo = 3
+          },
+          new Card{
+              Id = 19,
+              Title = "Create Life Goals Board",
+              Description = "",
+              ColumnId = 7,
+              OrderNo = 1
+          }
         };
 
       _comments = new List<Comment>
