@@ -36,7 +36,7 @@ namespace MyAngularBoardBackend
       services.AddCors(options =>
       {
         options.AddPolicy("AllowMyOrigin",
-          builder => builder.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod());
+          builder => builder.WithOrigins("http://localhost:4200", "http://www.myangularboard.com").AllowAnyHeader().AllowAnyMethod());
       });
     }
 
